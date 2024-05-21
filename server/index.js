@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user.route.js");
+const todoRouter = require("./routes/todo.route.js");
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,7 @@ app.get("/", (res) => {
 });
 
 app.use("/auth", userRouter);
+app.use("/todo", todoRouter);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

@@ -14,7 +14,7 @@ const auth = async (req, res, next) => {
     }
 
     // set the user id in the request object
-    req.userId = _id;
+    req.body.userId = _id;
 
     next();
   } catch (e) {

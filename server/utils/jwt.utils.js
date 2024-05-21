@@ -5,7 +5,7 @@ const generateJWT = (payload, expiresIn) => {
     try {
         return jwt.sign(payload, secretKey, { expiresIn });
     } catch (error) {
-    console.error("Error generating JWT: ", error);
+    // console.error("Error generating JWT: ", error.message);
     return null;
 }
 };
@@ -16,7 +16,7 @@ const verifyJWT = (token) => {
     const decoded = jwt.verify(token, secretKey);
     return decoded;
   } catch (error) {
-    console.error("Error verifying JWT:", error);
+    // console.error("Error verifying JWT:", error.message);
     return null;
   }
 };
