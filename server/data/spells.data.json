@@ -1,0 +1,226 @@
+[
+    {
+        "name": "Accio",
+        "description": "Summons an object to the caster."
+    },
+    {
+        "name": "Alohomora",
+        "description": "Unlocks doors and objects."
+    },
+    {
+        "name": "Avada Kedavra",
+        "description": "Kills the target instantly."
+    },
+    {
+        "name": "Crucio",
+        "description": "Inflicts excruciating pain on the target."
+    },
+    {
+        "name": "Imperio",
+        "description": "Controls a person's actions."
+    },
+    {
+        "name": "Lumos",
+        "description": "Creates light at the wand tip."
+    },
+    {
+        "name": "Nox",
+        "description": "Counter-spell to Lumos."
+    },
+    {
+        "name": "Expelliarmus",
+        "description": "Disarms your opponent."
+    },
+    {
+        "name": "Expecto Patronum",
+        "description": "Creates a Patronus."
+    },
+    {
+        "name": "Sectumsempra",
+        "description": "Causes severe lacerations on the target."
+    },
+    {
+        "name": "Levicorpus",
+        "description": "Levitates the target by the ankle."
+    },
+    {
+        "name": "Liberacorpus",
+        "description": "Counter-spell to Levicorpus."
+    },
+    {
+        "name": "Morsmordre",
+        "description": "Conjures the Dark Mark."
+    },
+    {
+        "name": "Silencio",
+        "description": "Silences the target."
+    },
+    {
+        "name": "Confundo",
+        "description": "Causes confusion."
+    },
+    {
+        "name": "Aparecium",
+        "description": "Reveals invisible ink."
+    },
+    {
+        "name": "Episkey",
+        "description": "Heals minor injuries."
+    },
+    {
+        "name": "Finite Incantatem",
+        "description": "Negates spells."
+    },
+    {
+        "name": "Incarcerous",
+        "description": "Conjures ropes to bind the target."
+    },
+    {
+        "name": "Locomotor",
+        "description": "Moves objects."
+    },
+    {
+        "name": "Obliviate",
+        "description": "Erases memories."
+    },
+    {
+        "name": "Reparo",
+        "description": "Repairs broken objects."
+    },
+    {
+        "name": "Riddikulus",
+        "description": "Causes a Boggart to take on a form that is humorous to the caster."
+    },
+    {
+        "name": "Sonorus",
+        "description": "Amplifies the caster's voice."
+    },
+    {
+        "name": "Petrificus Totalus",
+        "description": "Petrifies the target."
+    },
+    {
+        "name": "Prior Incantato",
+        "description": "Reveals the last spell cast by a wand."
+    },
+    {
+        "name": "Protego",
+        "description": "Creates a magical barrier."
+    },
+    {
+        "name": "Reducto",
+        "description": "Blasts solid objects aside."
+    },
+    {
+        "name": "Stupefy",
+        "description": "Stuns the target."
+    },
+    {
+        "name": "Wingardium Leviosa",
+        "description": "Levitates an object."
+    },
+    {
+        "name": "Tarantallegra",
+        "description": "Forces the target to dance."
+    },
+    {
+        "name": "Aguamenti",
+        "description": "Conjures water."
+    },
+    {
+        "name": "Avis",
+        "description": "Launches birds from the caster's wand."
+    },
+    {
+        "name": "Colloportus",
+        "description": "Magically locks a door."
+    },
+    {
+        "name": "Deletrius",
+        "description": "Counters the effects of Prior Incantato."
+    },
+    {
+        "name": "Diffindo",
+        "description": "Splits seams."
+    },
+    {
+        "name": "Engorgio",
+        "description": "Enlarges an item."
+    },
+    {
+        "name": "Evanesco",
+        "description": "Makes things vanish."
+    },
+    {
+        "name": "Ferula",
+        "description": "Creates bandages."
+    },
+    {
+        "name": "Flagrate",
+        "description": "Allows the user to write on objects."
+    },
+    {
+        "name": "Impedimenta",
+        "description": "Slows an advancing object."
+    },
+    {
+        "name": "Impervius",
+        "description": "Makes an object repel water."
+    },
+    {
+        "name": "Incendio",
+        "description": "Starts a fire."
+    },
+    {
+        "name": "Legilimens",
+        "description": "Allows the caster to delve into the mind of the victim."
+    },
+    {
+        "name": "Mobilicorpus",
+        "description": "Moves unconscious bodies."
+    },
+    {
+        "name": "Muffliato",
+        "description": "Fills the ears of those nearby with an unidentifiable buzzing."
+    },
+    {
+        "name": "Orchideous",
+        "description": "Conjures a bunch of flowers."
+    },
+    {
+        "name": "Pack",
+        "description": "Packs a trunk."
+    },
+    {
+        "name": "Point Me",
+        "description": "Wand acts like a compass."
+    },
+    {
+        "name": "Portus",
+        "description": "Makes an object a Portkey."
+    },
+    {
+        "name": "Quietus",
+        "description": "Counter-spell to Sonorus."
+    },
+    {
+        "name": "Reducio",
+        "description": "Returns items to original size."
+    },
+    {
+        "name": "Relashio",
+        "description": "Releases user from binding."
+    },
+    {
+        "name": "Rennervate",
+        "description": "Awakens the victim."
+    },
+    {
+        "name": "Rictusempra",
+        "description": "Tickles the victim."
+    },
+    {
+        "name": "Scourgify",
+        "description": "Cleans objects."
+    }
+]
