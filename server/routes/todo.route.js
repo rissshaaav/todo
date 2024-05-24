@@ -1,5 +1,5 @@
 const express = require('express');
-const auth = require('../utils/auth.utils');
+const auth = require('../middlewares/auth.middleware');
 const newTodo = require('../controllers/newTodo.controller');
 const allTodos = require('../controllers/allTodos.controller');
 const deleteTodo = require('../controllers/deleteTodo.controller');
