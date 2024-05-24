@@ -6,6 +6,7 @@ const deleteTodo = require('../controllers/deleteTodo.controller');
 const getTodo = require('../controllers/getTodo.controller');
 const updateTodoStatus = require('../controllers/updateTodoStatus.controller');
 const updateTodo = require('../controllers/updateTodo.controller');
+const searchAndFilterTodos = require('../controllers/searchAndFilterTodos.controller');
 
 const todoRouter = express.Router();
 
@@ -23,6 +24,9 @@ todoRouter.put("/update/:id", auth, updateTodo);
 
 // Update the status of a todo by id
 todoRouter.patch("/update/:id/status", auth, updateTodoStatus);
+
+// Search and filter todos
+todoRouter.get("/search", auth, searchAndFilterTodos);
 
 // Delete a todo by id
 todoRouter.delete("/delete/:id", auth, deleteTodo);
