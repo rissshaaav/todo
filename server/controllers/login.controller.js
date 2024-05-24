@@ -1,7 +1,6 @@
 const User = require("../models/user.model.js");
 const { generateJWT } = require("../utils/jwt.utils.js");
 const { compareHash } = require("../utils/hash.utils.js");
-// const randomSpell = require("./randomSpell.controller.js");
 const randomSpell = require("../utils/randomSpell.utils.js");
 
 const login = async (req, res) => {
@@ -30,9 +29,10 @@ const login = async (req, res) => {
       }
       // if password is incorrect
       else {
-        // send a random harry potter spell in response
+        // Get a random harry potter spell
         const { name, description } = randomSpell();
-        console.log(name, description);
+
+        // send a random harry potter spell in response
         res
           .status(401)
           .json({ message: "incorrect password", spellName: name, spellDescription: description });
