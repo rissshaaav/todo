@@ -20,21 +20,17 @@ const updateTodoStatus = async (req, res) => {
                 .json({ message: "All fields are mandatory" });
         }
 
-        // Find the todo
-        const retrivedTodo = await Todo.findOne({
-            $and: [{ _id: todoId }, { userId }],
-        });
+        // Find the todo by id and update the status
+        const updatedTodo = await Todo.findOneAndUpdate(
+            { $and: [{ _id: todoId }, { userId }] },
+            { $set: { status } },
+            { new: true }
+        );
 
-        // Check if todo was found
-        if (!retrivedTodo) {
+        // If todo not found
+        if (!updatedTodo) {
             res.status(404).json({ message: "Todo not found!" });
         }
-
-        // Update the status of the todo
-        retrivedTodo.status = status;
-
-        // Save the updated todo
-        const updatedTodo = await retrivedTodo.save();
 
         // Send the updated todo in response
         res.status(200).json(updatedTodo);

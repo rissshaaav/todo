@@ -29,7 +29,7 @@ const updateTodo = async (req, res) => {
             { new: true }
         );
 
-        // If the todo is not found, return a 404 response
+        // If the todo not found
         if (!retrievedTodo) {
             return res.status(404).json({ message: "Todo not found" });
         }
