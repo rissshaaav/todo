@@ -20,7 +20,8 @@ todoRouter.get("/all", auth, allTodos);
 todoRouter.get("/get/:id", auth, getTodo);
 
 // Update a todo by id
-// NOTE: Although this is a PUT request, it can handle partial updates as well but that is not recommended. Better stick to HTTP Semantics. 
+// >NOTE: Although this is a PUT request, it can handle partial updates as well
+//> but that is not recommended. Better stick to HTTP Semantics. 
 todoRouter.put("/update/:id", auth, updateTodo);
 
 // Update the status of a todo by id
