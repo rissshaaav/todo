@@ -5,11 +5,11 @@ const login = require("../controllers/login.controller");
 
 const userRouter = express.Router();
 
-// get all users
-userRouter.get("/users", fetchAllUsers);
-
 // create new user
 userRouter.post("/new", newUser);
+
+// get all users
+userRouter.get("/all", fetchAllUsers);
 
 // login
 userRouter.post("/login", login);
