@@ -18,7 +18,7 @@ app.get("/", (res) => {
 });
 
 // Routes
-app.use("/auth", userRouter);
+app.use("/user", userRouter);
 app.use("/todo", todoRouter);
 
 // Server & Database Connection
