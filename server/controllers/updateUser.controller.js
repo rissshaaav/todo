@@ -28,7 +28,12 @@ const updateUser = async (req, res) => {
                 retrievedUser.username = username ?? retrievedUser.username;
                 retrievedUser.profilePictureLink =
                     profilePictureLink ?? retrievedUser.profilePictureLink;
-                retrievedUser.password = password ?? retrievedUser.password;
+
+                // retrievedUser.password = password ?? retrievedUser.password;
+                // !BUG: retrievedUser.password is already hashed and cannot be updated directly
+                //! because that'll hash the hashed password again and eventually
+                //! the user won't be able to login
+                // ~SOLUTION: create a separate PATCH route to update password
 
                 // Saving the updated user
                 const updatedUser = await retrievedUser.save();

@@ -10,6 +10,8 @@ const allTodos = async (req, res) => {
             return res.status(400).json({ message: "userId is required" });
         }
 
+        // !BUG: What if the user does not exist?
+
         // Fetch all todos from the database
         const todos = await Todo.find({ userId });
 
