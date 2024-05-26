@@ -4,6 +4,7 @@ const fetchAllUsers = require("../controllers/allUsers.controller");
 const newUser = require("../controllers/newUser.controller");
 const login = require("../controllers/login.controller");
 const updateUser = require("../controllers/updateUser.controller");
+const deleteUser = require("../controllers/deleteUser.controller");
 
 const userRouter = express.Router();
 
@@ -18,5 +19,8 @@ userRouter.post("/login", login);
 
 // update user
 userRouter.put("/update", auth, updateUser);
+
+// delete user
+userRouter.delete("/delete", auth, deleteUser);
 
 module.exports = userRouter;
