@@ -5,6 +5,7 @@ const newUser = require("../controllers/newUser.controller");
 const login = require("../controllers/login.controller");
 const updateUser = require("../controllers/updateUser.controller");
 const deleteUser = require("../controllers/deleteUser.controller");
+const updateUserPassword = require("../controllers/updateUserPassword");
 
 const userRouter = express.Router();
 
@@ -17,8 +18,11 @@ userRouter.get("/all", fetchAllUsers);
 // login
 userRouter.post("/login", login);
 
-// update user
+// update user info
 userRouter.put("/update", auth, updateUser);
+
+// update password
+userRouter.patch("/update/password", auth, updateUserPassword);
 
 // delete user
 userRouter.delete("/delete", auth, deleteUser);
