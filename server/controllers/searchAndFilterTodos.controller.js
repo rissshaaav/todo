@@ -4,7 +4,8 @@ const searchAndFilterTodos = async (req, res) => {
     // Get the userId from the request body
     const userId = req.body.userId;
 
-    if(!userId) {
+    // Check if the userId is provided
+    if (!userId) {
         return res.status(400).json({
             message: "User ID is required",
         });

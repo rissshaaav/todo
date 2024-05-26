@@ -1,12 +1,12 @@
-const express = require('express');
-const auth = require('../middlewares/auth.middleware');
-const newTodo = require('../controllers/newTodo.controller');
-const allTodos = require('../controllers/allTodos.controller');
-const deleteTodo = require('../controllers/deleteTodo.controller');
-const getTodo = require('../controllers/getTodo.controller');
-const updateTodoStatus = require('../controllers/updateTodoStatus.controller');
-const updateTodo = require('../controllers/updateTodo.controller');
-const searchAndFilterTodos = require('../controllers/searchAndFilterTodos.controller');
+const express = require("express");
+const auth = require("../middlewares/auth.middleware");
+const newTodo = require("../controllers/newTodo.controller");
+const allTodos = require("../controllers/allTodos.controller");
+const deleteTodo = require("../controllers/deleteTodo.controller");
+const getTodo = require("../controllers/getTodo.controller");
+const updateTodoStatus = require("../controllers/updateTodoStatus.controller");
+const updateTodo = require("../controllers/updateTodo.controller");
+const searchAndFilterTodos = require("../controllers/searchAndFilterTodos.controller");
 
 const todoRouter = express.Router();
 
@@ -21,7 +21,7 @@ todoRouter.get("/get/:id", auth, getTodo);
 
 // Update a todo by id
 // >NOTE: Although this is a PUT request, it can handle partial updates as well
-//> but that is not recommended. Better stick to HTTP Semantics. 
+//> but that is not recommended. Better stick to HTTP Semantics.
 todoRouter.put("/update/:id", auth, updateTodo);
 
 // Update the status of a todo by id

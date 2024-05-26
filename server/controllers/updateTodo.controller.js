@@ -23,7 +23,8 @@ const updateTodo = async (req, res) => {
         }
 
         // Find the todo by id and update it
-        // NOTE: Because $set is being used, this operation can handle partial updates as well but that is not recommended. Better stick to HTTP Semantics.
+        // >NOTE: Because $set is being used, this operation can handle partial updates
+        // > but that is not recommended. Better stick to HTTP Semantics.
         const retrievedTodo = await Todo.findOneAndUpdate(
             { $and: [{ _id: todoId }, { userId }] },
             { $set: { title, description, status, dueDate } },

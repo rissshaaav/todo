@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     },
     profilePictureLink: {
         type: String,
-        default: ""
+        default: "",
     },
     username: {
         type: String,
@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-// generate hash before saving user
+// generate password hash before saving user
 userSchema.pre("save", generateHash);
 
 // define user model
