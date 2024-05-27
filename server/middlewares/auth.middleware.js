@@ -6,7 +6,7 @@ const auth = async (req, res, next) => {
         const token = req.header("Authorization").replace("Bearer ", "");
 
         // Verify & extract the token
-        const _id = verifyJWT(token);
+        const { _id } = verifyJWT(token);
 
         // if the token is invalid, throw an error
         if (!_id) {

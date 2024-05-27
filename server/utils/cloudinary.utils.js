@@ -11,6 +11,8 @@ cloudinary.config({
 // !BUG: storing profilepicture by username is not a good idea
 // ! as usernames can be changed and hence profile picture will be lost
 
+
+// Function to upload profile picture to cloudinary
 const uploadProfilePicture = async (localFilePath, username) => {
     try {
         // check if local file path is provided
@@ -31,4 +33,19 @@ const uploadProfilePicture = async (localFilePath, username) => {
     }
 };
 
-module.exports = { uploadProfilePicture };
+// Function to delete profile picture from cloudinary
+const deleteProfilePicture = async (publicId) => {
+    try {
+        // check if public id is provided
+        if (!publicId) return null;
+
+        // delete profile picture from cloudinary
+        const response = await cloudinary.uploader.destroy(`profile_pictures/${publicId}`);
+        return response; // return the response
+    } catch (error) {
+        console.log("cloudinary.utils", error.message);
+        return null; // return null if error
+    }
+};
+
+module.exports = { uploadProfilePicture, deleteProfilePicture };
