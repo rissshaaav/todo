@@ -24,17 +24,20 @@ const newUser = async (req, res) => {
                 .json({ message: "Username or email already exists" });
         }
 
-        // saving user data except for profile picture
-        // so that I can use the user id to name the profile picture
+        // >NOTE: saving user data except for profile picture
+        // > so that I can use the user id to name the profile picture
         const user = new User({ name, email, username, password });
         const savedUser = await user.save();
 
+        // if profile picture is provided, upload it to cloudinary
         if (req.file) {
+            // check if profile picture is uploaded successfully to the server
             const profilePictureLocalPath = req.file.path;
             if (!profilePictureLocalPath) {
                 throw new Error("Error uploading profile picture to server");
             }
 
+            // upload profile picture to cloudinary
             const profilePictureLink = await uploadProfilePicture(
                 profilePictureLocalPath,
                 savedUser._id
@@ -45,18 +48,17 @@ const newUser = async (req, res) => {
                 );
             }
 
+            // update user data with profile picture link
             const updatedUser = await User.findOneAndUpdate(
                 { _id: savedUser._id },
                 { $set: { profilePictureLink } },
                 { new: true }
             );
             if (!updatedUser) {
-                return res
-                    .status(404)
-                    .json({
-                        message:
-                            "Error updating user profile picture: User not found",
-                    });
+                return res.status(404).json({
+                    message:
+                        "Error updating user profile picture: User not found",
+                });
             }
 
             return res.status(201).json(updatedUser);

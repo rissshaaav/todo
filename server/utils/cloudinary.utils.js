@@ -8,10 +8,6 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// !BUG: storing profilepicture by username is not a good idea
-// ! as usernames can be changed and hence profile picture will be lost
-
-
 // Function to upload profile picture to cloudinary
 const uploadProfilePicture = async (localFilePath, username) => {
     try {
@@ -40,7 +36,9 @@ const deleteProfilePicture = async (publicId) => {
         if (!publicId) return null;
 
         // delete profile picture from cloudinary
-        const response = await cloudinary.uploader.destroy(`profile_pictures/${publicId}`);
+        const response = await cloudinary.uploader.destroy(
+            `profile_pictures/${publicId}`
+        );
         return response; // return the response
     } catch (error) {
         console.log("cloudinary.utils", error.message);
