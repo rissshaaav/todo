@@ -1,7 +1,7 @@
 faltu.txt
 
 # Ignore temporary files in public folder
-/public/temp
+server/public/temp/
 
 # Ignore gitkeep files
 .gitkeep
