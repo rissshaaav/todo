@@ -1,4 +1,9 @@
 faltu.txt
+
+# Ignore temporary files in public folder
+/public/temp
+
+# Ignore gitkeep files
 .gitkeep
 
 # Ignore node_modules directory

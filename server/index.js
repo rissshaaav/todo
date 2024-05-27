@@ -1,11 +1,12 @@
-const express = require("express");
 const dotenv = require("dotenv");
+// Load environment variables
+dotenv.config();
+// >NOTE: env variables should be loaded before importing any other file
+const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user.route.js");
 const todoRouter = require("./routes/todo.route.js");
 
-// Load environment variables
-dotenv.config();
 // Create an express app
 const app = express();
 

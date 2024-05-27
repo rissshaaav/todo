@@ -6,11 +6,12 @@ const login = require("../controllers/login.controller");
 const updateUser = require("../controllers/updateUser.controller");
 const deleteUser = require("../controllers/deleteUser.controller");
 const updateUserPassword = require("../controllers/updateUserPassword");
+const upload = require("../middlewares/tempStoreToServer.middleware");
 
 const userRouter = express.Router();
 
 // create new user
-userRouter.post("/new", newUser);
+userRouter.post("/new", upload.single("profilePicture"), newUser);
 
 // get all users
 userRouter.get("/all", fetchAllUsers);
