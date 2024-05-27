@@ -12,33 +12,34 @@ const deleteUser = async (req, res) => {
             return res.status(400).json({ message: "User ID is required" });
         }
 
+        // delete the user's profile picture from cloudinary
+        const deletePP = await deleteProfilePicture(userId);
+
+        // check if user profile picture is successfully deleted
+        if (!(deletePP.result === "ok")) {
+            throw new Error(
+                "Error deleting user profile picture from cloudinary"
+            );
+        }
+
         // delete all todos of the user
         const deleteUserTodos = await Todo.deleteMany({ userId: userId });
 
-        // if all todos of the user are deleted, delete the user's profile picture
-        if (deleteUserTodos.acknowledged) {
+        // check if user todos are successfully deleted
+        if (!deleteUserTodos) {
+            throw new Error("Error deleting user todos");
+        }
 
-            // delete user profile picture from cloudinary
-            const deletePP = await deleteProfilePicture(userId);
+        // delete the user data
+        const deletedUser = await User.findOneAndDelete({ _id: userId });
 
-            // check if user profile picture is successfully deleted
-            if (!(deletePP.result === "ok")) {
-                throw new Error(
-                    "Error deleting user profile picture from cloudinary"
-                );
-            }
-
-            // if user profile picture is deleted, delete the user
-            const deleteUser = await User.findOneAndDelete({ _id: userId });
-
-            // if user is not deleted, return 404 error
-            if (!deleteUser) {
-                return res.status(404).json({ message: "User not found" });
-            }
+        // check if user is successfully deleted
+        if (!deletedUser) {
+            throw new Error("Error deleting user");
         }
 
         res.status(200).json({
-            message: `User with ID ${userId} and all its data are deleted successfully`,
+            message: `User with username ${deletedUser.username} and all its data are deleted successfully`,
         });
     } catch (error) {
         res.status(500).json({
