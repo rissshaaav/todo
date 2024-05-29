@@ -1,10 +1,10 @@
 import React from "react";
-import { colorConstants, designConstants } from "../constants";
+import { designConstants } from "../constants";
 
 const Input = ({placeholder, type, value, setValue, icon}) => {
     return (
         <div
-            className="flex items-center h-[50px] sm:h-[75px]"
+            className="flex items-center h-[50px] sm:h-[75px] w-full"
             style={{
                 border: `2px solid ${designConstants.borderColor}`,
                 borderRadius: designConstants.borderRadius,
@@ -29,8 +29,10 @@ const Input = ({placeholder, type, value, setValue, icon}) => {
             >
                 {icon("35px")}
             </div>
+                
+            {/* Input */}
             <input
-                className="input border-none rounded-none h-full focus:outline-none text-[15px] sm:text-[30px] w-full"
+                className="input border-none rounded-none h-full focus:outline-none text-[15px] sm:text-[20px] w-full"
                 style={{
                     borderLeft: `1px solid ${designConstants.borderColor}`,
                     borderTopRightRadius: designConstants.borderRadius,

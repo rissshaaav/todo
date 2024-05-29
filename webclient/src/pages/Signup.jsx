@@ -11,6 +11,8 @@ const Signup = () => {
 
     const signup = () => {
         console.log(username, password);
+        setName("");
+        setEmail("");
         setPassword("");
         setUsername("");
     };
@@ -20,7 +22,7 @@ const Signup = () => {
             style={{ backgroundColor: colorConstants.background }}
         >
             <div
-                className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"
+                className="min-w-sm max-w-lg pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"
                 style={{
                     backgroundColor: colorConstants.main,
                     borderRadius: designConstants.borderRadius,
@@ -37,7 +39,7 @@ const Signup = () => {
                 </div>
 
                 {/* Username and Password Inputs */}
-                <div className="flex flex-col justify-center gap-[12.5px] sm:gap-[25px] px-[25px] sm:px-[50px]">
+                <div className="flex flex-col justify-center gap-[12.5px] sm:gap-[25px] px-[25px] sm:px-[50px]  w-full">
                     {/* Name Input */}
                     <Input
                         placeholder="name"
