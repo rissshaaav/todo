@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { nameIcon, emailIcon, usernameIcon, passwordIcon } from "../assets/icons";
+import {
+    nameIcon,
+    emailIcon,
+    usernameIcon,
+    passwordIcon,
+} from "../assets/icons";
 import { colorConstants, designConstants } from "../constants";
 import Input from "../parts/Input";
+import SubmitBtn from "../parts/SubmitBtn";
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -76,12 +82,13 @@ const Signup = () => {
 
                 {/* Login Button */}
                 <div className="px-[25px] sm:px-[50px]">
-                    <button
-                        onClick={signup}
-                        className="btn bg-[#3f3f3f] hover:bg-[#6161ff] btn-block btn-outline text-[#fff] h-[50px] sm:h-[75px] text-[15px] sm:text-[30px] "
-                    >
-                        Signup
-                    </button>
+                    <SubmitBtn text="Signup" func={signup} />
+                    <p className="text-center mt-2">
+                        Not new?{" "}
+                        <span style={{ color: `${colorConstants.active}` }}>
+                            Login Here
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
