@@ -1,11 +1,11 @@
-const loginService = async (username, password) => {
+const signupService = async (name, email, username, password) => {
     try {
-        const response = await fetch("http://localhost:3001/user/login", {
+        const response = await fetch("http://localhost:3001/user/new", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ name, email, username, password }),
         });
         if (!response.ok) {
             const data = await response.json();
@@ -14,13 +14,10 @@ const loginService = async (username, password) => {
             );
         }
         const data = await response.json();
-        const token = data.token;
-        // -TODO: Save the token in local storage or cookies
-        console.log(token);
+        console.log(data);
     } catch (error) {
         const { data, status } = JSON.parse(error.message);
-        console.error(`Error: ${status}, Details:`, data);
+        console.error(`Error: ${status}, Details:`, data.message);
     }
 };
-
-export default loginService;
+export default signupService;

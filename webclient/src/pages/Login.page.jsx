@@ -8,16 +8,17 @@ import loginService from "../services/Login.service";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const login = () => {
-    //     console.log(username, password);
-    //     setPassword("");
-    //     setUsername("");
-    // };
+    const login = async () => {
+        await loginService(username, password);
+        setPassword("");
+        setUsername("");
+    };
     return (
         <div
             className={`min-w-screen min-h-screen flex justify-center items-center`}
             style={{ backgroundColor: colorConstants.background }}
         >
+            {/* Login Box */}
             <div
                 className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"
                 style={{
@@ -27,7 +28,7 @@ const Login = () => {
                     border: `2px solid ${designConstants.borderColor}`,
                 }}
             >
-                {/* Login Box Heading */}
+                {/* Heading */}
                 <div>
                     <h1 className="font-bold text-center text-[25px] sm:text-[50px] px-[25px] sm:px-[50px] mt-[10px]">
                         DoiT ToDo
@@ -38,17 +39,33 @@ const Login = () => {
                 {/* Username and Password Inputs */}
                 <div className="flex flex-col justify-center gap-[12.5px] sm:gap-[25px] px-[25px] sm:px-[50px]">
                     {/* Username Input */}
-                    <Input placeholder="username" icon={usernameIcon} value={username} setValue={setUsername} />
+                    <Input
+                        placeholder="username"
+                        icon={usernameIcon}
+                        value={username}
+                        setValue={setUsername}
+                    />
 
                     {/* Password Input */}
-                    <Input placeholder="password" type="password" icon={passwordIcon} value={password} setValue={setPassword} />
+                    <Input
+                        placeholder="password"
+                        type="password"
+                        icon={passwordIcon}
+                        value={password}
+                        setValue={setPassword}
+                    />
                 </div>
 
-                {/* Login Button */}
+                {/* Login Button and bottom text container */}
                 <div className="px-[25px] sm:px-[50px] w-full">
-                    <SubmitBtn text="Login" func={()=>loginService(username, password)} />
+                    {/* Login Button */}
+                    <SubmitBtn text="Login" func={login} />
+                    {/* bottom text */}
                     <p className="text-center mt-2">
-                        New here? <span style={{color: `${colorConstants.active}`}}>Signup here</span>
+                        New here?{" "}
+                        <span style={{ color: `${colorConstants.active}` }}>
+                            Signup here
+                        </span>
                     </p>
                 </div>
             </div>

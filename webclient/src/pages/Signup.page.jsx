@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import signupService from "../services/Signup.service";
 import {
     nameIcon,
     emailIcon,
@@ -15,8 +16,8 @@ const Signup = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const signup = () => {
-        console.log(username, password);
+    const signup = async () => {
+        await signupService(name, email, username, password);
         setName("");
         setEmail("");
         setPassword("");
@@ -27,6 +28,7 @@ const Signup = () => {
             className={`min-w-screen min-h-screen flex justify-center items-center`}
             style={{ backgroundColor: colorConstants.background }}
         >
+            {/* Signup Box */}
             <div
                 className="min-w-sm max-w-lg pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"
                 style={{
@@ -36,7 +38,7 @@ const Signup = () => {
                     border: `2px solid ${designConstants.borderColor}`,
                 }}
             >
-                {/* Login Box Heading */}
+                {/* Heading */}
                 <div>
                     <h1 className="font-bold text-center text-[25px] sm:text-[50px] px-[25px] sm:px-[50px] mt-[10px]">
                         DoiT ToDo
@@ -44,7 +46,7 @@ const Signup = () => {
                     <div className="divider m-0 p-0" />
                 </div>
 
-                {/* Username and Password Inputs */}
+                {/* Username and Password Inputs Container */}
                 <div className="flex flex-col justify-center gap-[12.5px] sm:gap-[25px] px-[25px] sm:px-[50px]  w-full">
                     {/* Name Input */}
                     <Input
@@ -80,9 +82,11 @@ const Signup = () => {
                     />
                 </div>
 
-                {/* Login Button */}
+                {/* Login Button and Bottom Text Container*/}
                 <div className="px-[25px] sm:px-[50px]">
+                    {/* Login Button */}
                     <SubmitBtn text="Signup" func={signup} />
+                    {/* Bottom text */}
                     <p className="text-center mt-2">
                         Not new?{" "}
                         <span style={{ color: `${colorConstants.active}` }}>
