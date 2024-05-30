@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "start:server": "npm --prefix server start",
+        "start:webclient": "npm --prefix webclient start",
+        "start": "concurrently \"npm run start:server\" \"npm run start:webclient\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
