@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-// import Input from "../components/Input";
 import { usernameIcon, passwordIcon } from "../assets/icons";
 import { colorConstants, designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
 import Input from "../parts/Input";
-// import { textConstants } from "../constants";
+import loginService from "../services/Login.service";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const login = () => {
-        console.log(username, password);
-        setPassword("");
-        setUsername("");
-    };
+    // const login = () => {
+    //     console.log(username, password);
+    //     setPassword("");
+    //     setUsername("");
+    // };
     return (
         <div
             className={`min-w-screen min-h-screen flex justify-center items-center`}
@@ -47,7 +46,7 @@ const Login = () => {
 
                 {/* Login Button */}
                 <div className="px-[25px] sm:px-[50px] w-full">
-                    <SubmitBtn text="Login" func={login} />
+                    <SubmitBtn text="Login" func={()=>loginService(username, password)} />
                     <p className="text-center mt-2">
                         New here? <span style={{color: `${colorConstants.active}`}}>Signup here</span>
                     </p>

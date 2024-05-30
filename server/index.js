@@ -4,6 +4,7 @@ dotenv.config();
 // >NOTE: env variables should be loaded before importing any other file
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const userRouter = require("./routes/user.route.js");
 const todoRouter = require("./routes/todo.route.js");
 
@@ -12,6 +13,9 @@ const app = express();
 
 // Parse incoming JSON data
 app.use(express.json());
+
+// CORS
+app.use(cors("http://localhost:3000"));
 
 // Define a route handler for the default home page
 app.get("/", (res) => {
