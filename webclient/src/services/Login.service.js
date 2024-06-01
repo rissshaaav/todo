@@ -5,6 +5,7 @@ const loginService = async (username, password) => {
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify({ username, password }),
         });
         if (!response.ok) {
@@ -16,7 +17,7 @@ const loginService = async (username, password) => {
         const data = await response.json();
         const token = data.token;
         // -TODO: Save the token in local storage or cookies
-        console.log(token);
+        return !!token;
     } catch (error) {
         const { data, status } = JSON.parse(error.message);
         console.error(`Error: ${status}, Details:`, data);

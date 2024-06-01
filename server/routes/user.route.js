@@ -7,6 +7,7 @@ const updateUser = require("../controllers/updateUser.controller");
 const deleteUser = require("../controllers/deleteUser.controller");
 const updateUserPassword = require("../controllers/updateUserPassword");
 const upload = require("../middlewares/tempStoreToServer.middleware");
+const authenticator = require("../controllers/authenticator.controller");
 
 const userRouter = express.Router();
 
@@ -27,5 +28,8 @@ userRouter.patch("/update/password", auth, updateUserPassword);
 
 // delete user
 userRouter.delete("/delete", auth, deleteUser);
+
+// authenticator -> authenticates cookie and sends back user info
+userRouter.get("/authenticator", authenticator);
 
 module.exports = userRouter;

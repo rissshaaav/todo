@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usernameIcon, passwordIcon } from "../assets/icons";
 import { colorConstants, designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
 import Input from "../parts/Input";
 import loginService from "../services/Login.service";
+import { useNavigate } from "react-router-dom";
+import authChecker from "../utils/AuthChecker.utils";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    // ?FIXME: below useEffect is causing infinite rendering of login page
+    // useEffect(() => {
+    //     const checkAuth = async () => {
+    //         const auth = await authChecker();
+    //         if (auth) {
+    //             navigate("/");
+    //         }
+    //     };
+    //     checkAuth();
+    // }, [navigate]);
+
     const login = async () => {
-        await loginService(username, password);
-        setPassword("");
-        setUsername("");
+        try {
+            const response = await loginService(username, password);
+            if (response === true) {
+                setPassword("");
+                setUsername("");
+                navigate("/");
+            }
+        } catch (error) {
+            console.error(error);
+            // Handle the error (e.g., show a message to the user)
+        }
     };
     return (
         <div

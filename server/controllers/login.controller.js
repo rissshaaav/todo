@@ -30,7 +30,15 @@ const login = async (req, res) => {
             if (isPasswordCorrect) {
                 // generate JWT token and send in response
                 const token = generateJWT({ _id: user._id }, "2h");
-                res.status(200).json({ token });
+
+                // cookie options
+                const options = {
+                    httpOnly: true,
+                    secure: true,
+                };
+                res.status(200)
+                    .cookie("doitAuthCookie", token, options)
+                    .json({ token });
             }
             // if password is incorrect
             else {

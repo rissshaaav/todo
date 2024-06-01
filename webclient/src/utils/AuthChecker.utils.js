@@ -1,13 +1,18 @@
-function authChecker() {
-    const authToken = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("authToken="))
-        ?.split("=")[1];
+async function authChecker() {
+    try {
+        const response = await fetch('http://localhost:3001/user/authenticator', {
+            method: 'GET',
+            credentials: 'include',
+        });
 
-    // const isAuthenticated = !!authToken;
-    const isAuthenticated = !!authToken;
+        const { isAuthenticated } = await response.json();
 
-    return isAuthenticated;
+        return isAuthenticated;
+    } catch (error) {
+        console.error(error);
+        // Handle the error (e.g., return false)
+        return false;
+    }
 }
 
 export default authChecker;

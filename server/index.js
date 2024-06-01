@@ -5,6 +5,7 @@ dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const userRouter = require("./routes/user.route.js");
 const todoRouter = require("./routes/todo.route.js");
 
@@ -14,8 +15,11 @@ const app = express();
 // Parse incoming JSON data
 app.use(express.json());
 
+// Parse incoming cookies
+app.use(cookieParser());
+
 // CORS
-app.use(cors("http://localhost:3000"));
+app.use(cors({origin:"http://localhost:3000", credentials: true }));
 
 // Define a route handler for the default home page
 app.get("/", (res) => {
