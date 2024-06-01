@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import authChecker from "./utils/AuthChecker.utils";
+import Layout from "./Layout";
 import {
     createBrowserRouter,
     createRoutesFromElements,
@@ -13,12 +14,12 @@ import Login from "./pages/Login.page";
 import Signup from "./pages/Signup.page";
 import Home from "./pages/Home.page";
 
-const isAuthenticated = true;
+const isAuthenticated = authChecker();
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="/" element={isAuthenticated ? <App/> : <Navigate to="/login"/>}>
+            <Route path="/" element={isAuthenticated ? <Layout/> : <Navigate to="/login"/>}>
                 <Route path="" element={<Home />} />
             </Route>
             <Route path="signup" element={<Signup />} />
