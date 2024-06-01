@@ -1,11 +1,9 @@
 import React from "react";
-import Signup from "./pages/Signup.page";
-import Login from "./pages/Login.page";
+import { Outlet } from "react-router-dom";
 function App() {
     return (
         <div className="App">
-            <Login />
-            <Signup/>
+            <Outlet/>
         </div>
     );
 }
