@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import signupService from "../services/Signup.service";
 import {
     nameIcon,
@@ -89,9 +90,9 @@ const Signup = () => {
                     {/* Bottom text */}
                     <p className="text-center mt-2">
                         Not new?{" "}
-                        <span style={{ color: `${colorConstants.active}` }}>
+                        <Link to="/login" style={{ color: `${colorConstants.active}` }}>
                             Login Here
-                        </span>
+                        </Link>
                     </p>
                 </div>
             </div>

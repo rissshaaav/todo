@@ -15,9 +15,7 @@ const loginService = async (username, password) => {
             );
         }
         const data = await response.json();
-        const token = data.token;
-        // -TODO: Save the token in local storage or cookies
-        return !!token;
+        return data.token ? true : false;
     } catch (error) {
         const { data, status } = JSON.parse(error.message);
         console.error(`Error: ${status}, Details:`, data);
@@ -25,3 +23,5 @@ const loginService = async (username, password) => {
 };
 
 export default loginService;
+
+// Path: webclient/src/pages/Login.page.jsx

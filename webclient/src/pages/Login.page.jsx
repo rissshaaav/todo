@@ -4,7 +4,7 @@ import { colorConstants, designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
 import Input from "../parts/Input";
 import loginService from "../services/Login.service";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import authChecker from "../utils/AuthChecker.utils";
 
 const Login = () => {
@@ -33,7 +33,7 @@ const Login = () => {
             }
         } catch (error) {
             console.error(error);
-            // Handle the error (e.g., show a message to the user)
+            console.alert("Invalid Credentials");
         }
     };
     return (
@@ -86,9 +86,9 @@ const Login = () => {
                     {/* bottom text */}
                     <p className="text-center mt-2">
                         New here?{" "}
-                        <span style={{ color: `${colorConstants.active}` }}>
+                        <Link to="/signup" style={{ color: `${colorConstants.active}` }}>
                             Signup here
-                        </span>
+                        </Link>
                     </p>
                 </div>
             </div>
