@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { usernameIcon, passwordIcon } from "../assets/icons";
 import { colorConstants, designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
@@ -8,10 +9,18 @@ import loginService from "../services/Login.service";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
     const login = async () => {
-        await loginService(username, password);
-        setPassword("");
-        setUsername("");
+        const isSuccess = await loginService(username, password);
+        if (isSuccess) {
+            setPassword("");
+            setUsername("");
+            console.log("Login Successful");
+            navigate("/");
+        }
+        else{
+            console.log("Login Failed");
+        }
     };
     return (
         <div
@@ -63,9 +72,12 @@ const Login = () => {
                     {/* bottom text */}
                     <p className="text-center mt-2">
                         New here?{" "}
-                        <span style={{ color: `${colorConstants.active}` }}>
+                        <Link
+                            to="/signup"
+                            style={{ color: `${colorConstants.active}` }}
+                        >
                             Signup here
-                        </span>
+                        </Link>
                     </p>
                 </div>
             </div>

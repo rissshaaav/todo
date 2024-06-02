@@ -9,6 +9,7 @@ import {
 import { colorConstants, designConstants } from "../constants";
 import Input from "../parts/Input";
 import SubmitBtn from "../parts/SubmitBtn";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -89,9 +90,9 @@ const Signup = () => {
                     {/* Bottom text */}
                     <p className="text-center mt-2">
                         Not new?{" "}
-                        <span style={{ color: `${colorConstants.active}` }}>
+                        <Link to="/login" style={{ color: `${colorConstants.active}` }}>
                             Login Here
-                        </span>
+                        </Link>
                     </p>
                 </div>
             </div>
