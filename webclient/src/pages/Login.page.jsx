@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import authChecker from "../utils/authChecker.utils";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { usernameIcon, passwordIcon } from "../assets/icons";
 import { colorConstants, designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
@@ -10,23 +13,40 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    // login function
     const login = async () => {
-        const isSuccess = await loginService(username, password);
-        if (isSuccess) {
+        // calls login service which sends username and password to server
+        const { status, data } = await loginService(username, password);
+        // if status is 200, clear inputs and navigate to home page
+        if (status === 200) {
             setPassword("");
             setUsername("");
-            console.log("Login Successful");
             navigate("/");
-        }
-        else{
-            console.log("Login Failed");
+        } else {
+            // if status is not 200, show error message
+            toast.error(`${status}: ${data}`);
+            console.log(status, data);
         }
     };
+
+    // check if user is authenticated
+    useEffect(() => {
+        const checkAuth = async () => {
+            // call authChecker function to check if user is authenticated
+            const isAuthenticated = await authChecker();
+            if (isAuthenticated) {
+                navigate("/");
+            }
+        };
+        checkAuth();
+    }, [navigate]);
     return (
         <div
             className={`min-w-screen min-h-screen flex justify-center items-center`}
             style={{ backgroundColor: colorConstants.background }}
         >
+            <ToastContainer />
             {/* Login Box */}
             <div
                 className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"

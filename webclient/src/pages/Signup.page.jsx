@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import signupService from "../services/Signup.service";
 import {
     nameIcon,
@@ -6,24 +6,42 @@ import {
     usernameIcon,
     passwordIcon,
 } from "../assets/icons";
+import authChecker from "../utils/authChecker.utils";
+import { Link, useNavigate } from "react-router-dom";
 import { colorConstants, designConstants } from "../constants";
 import Input from "../parts/Input";
 import SubmitBtn from "../parts/SubmitBtn";
-import { Link } from "react-router-dom";
 
 const Signup = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
+    // signup function
+    // ?FIXME: Handle response from signup service properly
     const signup = async () => {
+        // call signup service with name, email, username, password
         await signupService(name, email, username, password);
+        // clear all inputs
         setName("");
         setEmail("");
         setPassword("");
         setUsername("");
     };
+
+    // check if user is authenticated
+    useEffect(() => {
+        const checkAuth = async () => {
+            // call authChecker function to check if user is authenticated
+            const isAuthenticated = await authChecker();
+            if (isAuthenticated) {
+                navigate("/");
+            }
+        };
+        checkAuth();
+    }, [navigate]);
     return (
         <div
             className={`min-w-screen min-h-screen flex justify-center items-center`}
@@ -90,7 +108,10 @@ const Signup = () => {
                     {/* Bottom text */}
                     <p className="text-center mt-2">
                         Not new?{" "}
-                        <Link to="/login" style={{ color: `${colorConstants.active}` }}>
+                        <Link
+                            to="/login"
+                            style={{ color: `${colorConstants.active}` }}
+                        >
                             Login Here
                         </Link>
                     </p>

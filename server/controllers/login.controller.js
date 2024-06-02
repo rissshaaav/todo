@@ -1,7 +1,6 @@
 const User = require("../models/user.model.js");
 const { generateJWT } = require("../utils/jwt.utils.js");
 const { compareHash } = require("../utils/hash.utils.js");
-const randomSpell = require("../utils/randomSpell.utils.js");
 
 const login = async (req, res) => {
     try {
@@ -38,20 +37,15 @@ const login = async (req, res) => {
                     secure: true,
                 };
 
+                // send cookie and message in response
                 res.status(200)
                     .cookie("doitAuthCookie", token, options)
-                    .json({ message: "Login successful: " + user.username });
+                    .json({ message: "Login successful" });
             }
             // if password is incorrect
             else {
-                // Get a random harry potter spell
-                const { name, description } = randomSpell();
-
-                // send a random harry potter spell in response
                 res.status(401).json({
                     message: "incorrect password",
-                    spellName: name,
-                    spellDescription: description,
                 });
             }
         }
