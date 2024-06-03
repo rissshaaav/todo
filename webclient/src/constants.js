@@ -2,6 +2,7 @@ export const colorConstants = {
     background: "#f3f4f6",
     main: "#ffffff",
     active: "#6161ff",
+    secondary: "3f3f3f",
 };
 
 export const textConstants = {

@@ -18,7 +18,7 @@ const Layout = () => {
     }, [navigate]);
 
     return (
-        <div>
+        <div className="bg-[#f3f4f6] min-w-screen min-h-screen">
             <Outlet />
         </div>
     );
