@@ -13,6 +13,7 @@ import Profile from "./pages/Profile.page";
 import Inbox from "./pages/Inbox.page";
 import Calendar from "./pages/Calendar.page";
 import Trash from "./pages/Trash.page";
+import Test from "./parts/TodoDetails.parts";
 
 const App = () => {
     // create browser router
@@ -21,10 +22,12 @@ const App = () => {
         createRoutesFromElements(
             <>
                 <Route path="/" element={<Layout />}>
-                    <Route path="" element={<Todo/>} />
-                    <Route path="profile" element={<Profile/>} />
-                    <Route path="inbox" element={<Inbox/>} />
-                    <Route path="calendar" element={<Calendar/>} />
+                    <Route path="todo" element={<Todo />}>
+                        <Route path=":id" element={<Test />} />
+                    </Route>
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="inbox" element={<Inbox />} />
+                    <Route path="calendar" element={<Calendar />} />
                     <Route path="trash" element={<Trash />} />
                 </Route>
                 <Route path="signup" element={<Signup />} />

@@ -4,9 +4,9 @@ import TodoListItem from "./TodoListItem.part";
 
 const AllTodos = () => {
     return (
-        <div className="bg-white w-7/12 h-full p-5 flex flex-col gap-10">
+        <div className="bg-white min-w-[50%] w-[60%] h-full p-5 flex flex-col gap-10">
             <div className="text-[30px] font-bold">Todo</div>
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
                 <div className="text-[20px] font-semibold">
                     <span>Today, </span>
                     <span>04/06/2024</span>

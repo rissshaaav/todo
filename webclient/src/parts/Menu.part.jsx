@@ -26,7 +26,7 @@ const Menu = () => {
 
             {/* Menu items */}
             {/* Todo */}
-            <MenuItem leftIcon={todoIcon("30px")} text="Todo" to="/"/>
+            <MenuItem leftIcon={todoIcon("30px")} text="Todo" to="/todo"/>
             {/* Inbox */}
             <MenuItem leftIcon={inboxIcon("30px")} text="Inbox" to="/inbox"/>
             {/* Calendar */}

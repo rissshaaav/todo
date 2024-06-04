@@ -14,6 +14,9 @@ const Layout = () => {
             if (!isAuthenticated) {
                 navigate("/login");
             }
+            if(isAuthenticated && window.location.pathname === "/"){
+                navigate("/todo");
+            }
         };
         checkAuth();
     }, [navigate]);
