@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import authChecker from "./utils/authChecker.utils";
+import Menu from "./parts/Menu.part";
 
 const Layout = () => {
     const navigate = useNavigate();
@@ -18,7 +19,8 @@ const Layout = () => {
     }, [navigate]);
 
     return (
-        <div className="bg-[#f3f4f6] min-w-screen min-h-screen">
+        <div className="bg-[#f3f4f6] min-w-screen min-h-screen flex">
+            <Menu/>
             <Outlet />
         </div>
     );
