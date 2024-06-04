@@ -2,7 +2,7 @@ import React from 'react'
 
 const Inbox = () => {
   return (
-    <div className="bg-white w-6/12 p-5">Inbox</div>
+    <div className="flex-1">Inbox</div>
   )
 }
 
