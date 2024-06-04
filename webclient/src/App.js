@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login.page";
 import Signup from "./pages/Signup.page";
-import AllTodos from "./pages/AllTodos.page";
+import Todo from "./pages/Todo.page";
 import Profile from "./pages/Profile.page";
 import Inbox from "./pages/Inbox.page";
 import Calendar from "./pages/Calendar.page";
@@ -21,7 +21,7 @@ const App = () => {
         createRoutesFromElements(
             <>
                 <Route path="/" element={<Layout />}>
-                    <Route path="" element={<AllTodos/>} />
+                    <Route path="" element={<Todo/>} />
                     <Route path="profile" element={<Profile/>} />
                     <Route path="inbox" element={<Inbox/>} />
                     <Route path="calendar" element={<Calendar/>} />
