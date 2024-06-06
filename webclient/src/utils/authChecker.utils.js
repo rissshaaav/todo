@@ -17,3 +17,4 @@ const authChecker = async() => {
 }
 
 export default authChecker;
+// used in Layout.jsx, Login.page.jsx

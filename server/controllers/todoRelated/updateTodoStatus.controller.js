@@ -1,4 +1,4 @@
-const Todo = require("../models/todo.model");
+const Todo = require("../../models/todo.model");
 
 const updateTodoStatus = async (req, res) => {
     // Extract userId, todoId, and status from request body and params

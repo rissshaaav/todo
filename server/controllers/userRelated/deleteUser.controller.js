@@ -1,6 +1,6 @@
-const User = require("../models/user.model");
-const Todo = require("../models/todo.model");
-const { deleteProfilePicture } = require("../utils/cloudinary.utils");
+const User = require("../../models/user.model");
+const Todo = require("../../models/todo.model");
+const { deleteProfilePicture } = require("../../utils/cloudinary.utils");
 
 const deleteUser = async (req, res) => {
     try {

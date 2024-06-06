@@ -1,12 +1,12 @@
 const express = require("express");
 const auth = require("../middlewares/auth.middleware");
-const newTodo = require("../controllers/newTodo.controller");
-const allTodos = require("../controllers/allTodos.controller");
-const deleteTodo = require("../controllers/deleteTodo.controller");
-const getTodo = require("../controllers/getTodo.controller");
-const updateTodoStatus = require("../controllers/updateTodoStatus.controller");
-const updateTodo = require("../controllers/updateTodo.controller");
-const searchAndFilterTodos = require("../controllers/searchAndFilterTodos.controller");
+const newTodo = require("../controllers/todoRelated/newTodo.controller");
+const allTodos = require("../controllers/todoRelated/allTodos.controller");
+const deleteTodo = require("../controllers/todoRelated/deleteTodo.controller");
+const getTodo = require("../controllers/todoRelated/getTodo.controller");
+const updateTodoStatus = require("../controllers/todoRelated/updateTodoStatus.controller");
+const updateTodo = require("../controllers/todoRelated/updateTodo.controller");
+const searchAndFilterTodos = require("../controllers/todoRelated/searchAndFilterTodos.controller");
 
 const todoRouter = express.Router();
 
