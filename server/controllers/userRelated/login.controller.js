@@ -1,6 +1,6 @@
-const User = require("../models/user.model.js");
-const { generateJWT } = require("../utils/jwt.utils.js");
-const { compareHash } = require("../utils/hash.utils.js");
+const User = require("../../models/user.model.js");
+const { generateJWT } = require("../../utils/jwt.utils.js");
+const { compareHash } = require("../../utils/hash.utils.js");
 
 const login = async (req, res) => {
     try {

@@ -1,4 +1,4 @@
-const Todo = require("../models/todo.model");
+const Todo = require("../../models/todo.model");
 
 const searchAndFilterTodos = async (req, res) => {
     // Get the userId from the request body

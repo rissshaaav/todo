@@ -1,4 +1,4 @@
-const User = require("../models/user.model");
+const User = require("../../models/user.model");
 
 const updateUserPassword = async (req, res) => {
     try {
