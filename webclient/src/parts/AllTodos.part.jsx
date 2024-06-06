@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { addIcon } from "../assets/icons";
 import TodoListItem from "./TodoListItem.part";
+import allTodos from "../services/allTodos.service";
 
 const AllTodos = () => {
+    const [receivedTodos, setReceivedTodos] = useState([]);
+    useEffect(() => {
+        const fetchAllTodos = async () => {
+            const data = await allTodos();
+            if (data) {
+                setReceivedTodos(data);
+            }
+        };
+        fetchAllTodos();
+    });
     return (
         <div className="bg-white min-w-[50%] w-[60%] h-full p-5 flex flex-col gap-10">
             <div className="text-[30px] font-bold">Todo</div>
@@ -23,7 +34,17 @@ const AllTodos = () => {
                     scrollbarWidth: "none",
                 }}
             >
-                <TodoListItem
+                {receivedTodos.map((todo) => {
+                    return (
+                        <TodoListItem
+                            id={todo._id}
+                            title={todo.title}
+                            dueDate={todo.dueDate}
+                            key={todo._id}
+                        />
+                    );
+                })}
+                {/* <TodoListItem
                     title="Documenting on Github"
                     dueDate="4 June, 2024"
                 />
@@ -43,7 +64,7 @@ const AllTodos = () => {
                 <TodoListItem
                     title="Documenting on Github"
                     dueDate="30 May, 2024"
-                />
+                /> */}
             </ul>
         </div>
     );
