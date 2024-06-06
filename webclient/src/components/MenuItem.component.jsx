@@ -8,12 +8,30 @@ const MenuItem = ({ leftIcon, text, rightIcon, header = false, to }) => {
             className={`hover:bg-white bg-${
                 header && "white"
             } p-2.5 rounded-[10px] flex items-center gap-[10px] h-[50px] w-full`}
+            // style for when active menu item
             style={({ isActive }) =>
-                isActive ? { backgroundColor: "white", color: "#6161ff", fontWeight: "bold" } : {}
+                isActive
+                    ? {
+                          backgroundColor: "white",
+                          color: "#6161ff",
+                          fontWeight: "bold",
+                      }
+                    : {}
             }
         >
-            {/* avatar or icon */}
-            {leftIcon && <div>{leftIcon}</div>}
+            {/* if this component is used as header then 
+            render image tag else render div containing icon */}
+            {header ? (
+                <div className="flex items-center gap-[10px]">
+                    <img
+                        src={leftIcon}
+                        alt="profile"
+                        className="h-[30px] w-[30px] rounded-full"
+                    />
+                </div>
+            ) : (
+                <div>{leftIcon}</div>
+            )}
 
             {/* username or menu text */}
             {text && (
