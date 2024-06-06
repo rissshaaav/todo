@@ -22,7 +22,7 @@ app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(cookieParser());
 
 // Define a route handler for the default home page
-app.get("/", (res) => {
+app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
