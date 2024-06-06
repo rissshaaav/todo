@@ -41,6 +41,7 @@ const AllTodos = () => {
                             title={todo.title}
                             dueDate={todo.dueDate}
                             key={todo._id}
+                            status={todo.status}
                         />
                     );
                 })}
