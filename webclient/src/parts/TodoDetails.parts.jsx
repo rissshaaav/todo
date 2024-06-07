@@ -20,7 +20,7 @@ const TodoDetails = () => {
             <p className="text-[30px] font-bold">{todoDetail.title}</p>
             <p className="text-[18px] font-semibold">
                 <span className="text-[#3f3f3f]">Due Date: </span>
-                <span>{todoDetail.dueDate}</span>
+                <span>{new Date(todoDetail.dueDate).toLocaleString()}</span>
             </p>
             <p>{todoDetail.description}</p>
         </div>
