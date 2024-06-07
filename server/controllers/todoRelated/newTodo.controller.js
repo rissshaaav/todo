@@ -18,7 +18,7 @@ const newTodo = async (req, res) => {
             title,
             description,
             status,
-            dueDate,
+            dueDate: new Date(dueDate),
         });
 
         // Save the new todo to the database
