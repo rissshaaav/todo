@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 const AllTodos = () => {
     // State to store all todos in array of objects
     const [receivedTodos, setReceivedTodos] = useState([]);
-    const [filterStatus, setFilterStatus] = useState("all");
+    const [filterByStatus, setFilterByStatus] = useState("all");
+    const [filterByTitle, setFilterByTitle] = useState("");
     const [filteredTodos, setFilteredTodos] = useState([]);
 
     // Fetch all todos by calling allTodos service
@@ -22,14 +23,19 @@ const AllTodos = () => {
     }, []); // Empty dependency array to run only once
 
     useEffect(() => {
-        if (filterStatus === "all") {
-            setFilteredTodos(receivedTodos);
-        } else {
-            setFilteredTodos(
-                receivedTodos.filter((todo) => todo.status === filterStatus)
+        let filtered = receivedTodos;
+        if (filterByStatus !== "all") {
+            filtered = filtered.filter(
+                (todo) => todo.status === filterByStatus
             );
         }
-    }, [filterStatus, receivedTodos]);
+        if (filterByTitle !== "") {
+            filtered = filtered.filter((todo) =>
+                todo.title.toLowerCase().includes(filterByTitle.toLowerCase())
+            );
+        }
+        setFilteredTodos(filtered);
+    }, [filterByStatus, filterByTitle, receivedTodos]);
     return (
         <div className="bg-white min-w-[50%] w-[60%] h-full p-5 flex flex-col gap-10">
             {/* Title -> TODO */}
@@ -43,7 +49,7 @@ const AllTodos = () => {
                     <select
                         defaultValue="all"
                         className="text-[20px] font-semibold"
-                        onChange={(e) => setFilterStatus(e.target.value)}
+                        onChange={(e) => setFilterByStatus(e.target.value)}
                     >
                         <option value="all">All</option>
                         <option value="active">Active</option>
@@ -51,6 +57,14 @@ const AllTodos = () => {
                         <option value="completed">Completed</option>
                     </select>
                 </div>
+
+                {/* Search Bar */}
+                <input
+                    type="text"
+                    placeholder="Search by title"
+                    className="p-2 border-[1px] rounded-[10px] w-[30%] text-[20px] font-semibold"
+                    onChange={(e) => setFilterByTitle(e.target.value)}
+                />
 
                 {/* New Todo Button */}
                 {/* Navigates to /todo/new */}
