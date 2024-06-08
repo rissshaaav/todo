@@ -3,6 +3,8 @@ import { addIcon } from "../assets/icons";
 import TodoListItem from "./TodoListItem.part";
 import allTodos from "../services/todoRelated/allTodos.service";
 import { Link } from "react-router-dom";
+import Input from "./Input";
+import { searchIcon } from "../assets/icons";
 
 const AllTodos = () => {
     // State to store all todos in array of objects
@@ -42,13 +44,13 @@ const AllTodos = () => {
             <h1 className="text-[30px] font-bold">Todo</h1>
 
             {/* Header -> Today's Date and New Todo Button */}
-            <header className="flex justify-between items-center">
+            <header className="flex justify-between items-center gap-2.5">
                 {/* Today's Date */}
                 <div className="text-[20px] font-semibold">
                     <span>Status:</span>
                     <select
                         defaultValue="all"
-                        className="text-[20px] font-semibold"
+                        className=""
                         onChange={(e) => setFilterByStatus(e.target.value)}
                     >
                         <option value="all">All</option>
@@ -59,11 +61,13 @@ const AllTodos = () => {
                 </div>
 
                 {/* Search Bar */}
-                <input
-                    type="text"
+                <Input
+                    className="flex-1 p-2 border-[1px] rounded-[10px] w-[30%] text-[20px] sm:h-full"
                     placeholder="Search by title"
-                    className="p-2 border-[1px] rounded-[10px] w-[30%] text-[20px] font-semibold"
-                    onChange={(e) => setFilterByTitle(e.target.value)}
+                    icon={searchIcon}
+                    iconSize="25px"
+                    value={filterByTitle}
+                    setValue={setFilterByTitle}
                 />
 
                 {/* New Todo Button */}

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { designConstants } from "../constants";
 
-const Input = ({ placeholder, type, value, setValue, icon }) => {
+const Input = ({ placeholder, type, value, setValue, icon, iconSize, className }) => {
     const [isFocused, setIsFocused] = useState(false);
     return (
         <div
-            className="flex items-center h-[50px] sm:h-[75px] w-full"
+            className={`flex items-center h-[50px] sm:h-[75px] w-full ${className}`}
             style={{
                 border: `2px solid ${designConstants.borderColor}`,
                 borderRadius: designConstants.borderRadius,
@@ -24,7 +24,7 @@ const Input = ({ placeholder, type, value, setValue, icon }) => {
                         : designConstants.borderColor,
                 }}
             >
-                {icon()}
+                {icon(iconSize ?? "")}
             </div>
 
             {/* visible on 640px and below screen */}
@@ -37,7 +37,7 @@ const Input = ({ placeholder, type, value, setValue, icon }) => {
                         : designConstants.borderColor,
                 }}
             >
-                {icon("35px")}
+                {icon(iconSize ?? "35px")}
             </div>
 
             {/* Input */}
