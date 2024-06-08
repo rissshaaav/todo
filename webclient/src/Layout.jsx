@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import authChecker from "./utils/authChecker.utils";
 import Menu from "./parts/Menu.part";
+import { ToastContainer } from "react-toastify";
 
 const Layout = () => {
     const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Layout = () => {
 
     return (
         <div className="bg-[#f3f4f6] min-w-screen min-h-screen flex">
+            <ToastContainer />
             <Menu />
             {/* Outlet is placeholder for nested routes */}
             <Outlet />

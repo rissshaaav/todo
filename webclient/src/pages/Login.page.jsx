@@ -7,7 +7,7 @@ import { usernameIcon, passwordIcon } from "../assets/icons";
 import { colorConstants, designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
 import Input from "../parts/Input";
-import loginService from "../services/Login.service";
+import loginService from "../services/userRelated/Login.service";
 
 const Login = () => {
     const [username, setUsername] = useState("");
