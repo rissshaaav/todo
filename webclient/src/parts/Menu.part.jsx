@@ -8,7 +8,7 @@ import {
     trashIcon,
 } from "../assets/icons";
 import useUserDataStore from "../store/userData.store";
-import userDataService from "../services/userData.service";
+import userDataService from "../services/userRelated/userData.service";
 
 const Menu = () => {
     // call setUserData action from userData store

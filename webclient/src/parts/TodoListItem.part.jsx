@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { calendarIcon, trashIcon } from "../assets/icons";
-import deleteTodo from "../services/deleteTodo.service";
-import {toast} from "react-toastify";
+import deleteTodo from "../services/todoRelated/deleteTodo.service";
+import { toast } from "react-toastify";
 
 const TodoListItem = ({ title, dueDate, id, status }) => {
     const deleteTodoHandler = async () => {
@@ -13,7 +13,7 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
         } catch (error) {
             console.log("TodoListItem -> ", error.message);
         }
-    }
+    };
     return (
         <li className="list-none flex items-start justify-center gap-x-[10px] border-[2px] border-[#e5e5e5] pl-2.5 rounded-[10px]">
             <input type="checkbox" className="h-[15px] w-[15px] mt-4" />
@@ -30,7 +30,10 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
                 </div>
             </Link>
 
-            <button onClick={deleteTodoHandler} className="align-center flex justify-center items-center p-1 w-[50px] h-full hover:bg-red-500 rounded-r-[10px]">
+            <button
+                onClick={deleteTodoHandler}
+                className="align-center flex justify-center items-center p-1 w-[50px] h-full hover:bg-red-500 rounded-r-[10px]"
+            >
                 {trashIcon("30px")}
             </button>
         </li>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import signupService from "../services/Signup.service";
+import signupService from "../services/userRelated/Signup.service";
 import {
     nameIcon,
     emailIcon,
