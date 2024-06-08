@@ -16,7 +16,6 @@ const AllTodos = () => {
             const data = await allTodos();
             if (data) {
                 setReceivedTodos(data); // Set received todos to the state
-                setFilteredTodos(data); // Set filtered todos to the state
             }
         };
         fetchAllTodos();
