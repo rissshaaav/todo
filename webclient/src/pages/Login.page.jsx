@@ -42,27 +42,23 @@ const Login = () => {
         checkAuth();
     }, [navigate]);
     return (
-        <div
-            className={`min-w-screen min-h-screen flex justify-center items-center`}
-            style={{ backgroundColor: colorConstants.background }}
-        >
+        <div className="min-w-screen min-h-screen flex justify-center items-center bg-background dark:bg-backgroundDark">
             <ToastContainer />
             {/* Login Box */}
             <div
-                className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"
+                className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px] bg-foreground dark:bg-foregroundDark border-[2px] border-borderColor dark:border-borderColorDark shadow-custom"
                 style={{
-                    backgroundColor: colorConstants.main,
                     borderRadius: designConstants.borderRadius,
-                    boxShadow: designConstants.boxShadow,
-                    border: `2px solid ${designConstants.borderColor}`,
                 }}
             >
                 {/* Heading */}
                 <div>
-                    <h1 className="font-bold text-center text-[25px] sm:text-[50px] px-[25px] sm:px-[50px] mt-[10px]">
+                    <h1 className="font-bold text-center text-[25px] sm:text-[50px] px-[25px] sm:px-[50px] mt-[10px] text-textMain dark:text-textMainDark">
                         DoiT ToDo
                     </h1>
-                    <div className="divider m-0 p-0" />
+
+                    {/* divider */}
+                    <div className="w-full border-[1px] border-borderColor dark:border-borderColorDark" />
                 </div>
 
                 {/* Username and Password Inputs */}
@@ -71,6 +67,8 @@ const Login = () => {
                     <Input
                         placeholder="username"
                         icon={usernameIcon}
+                        // ?FIXME: iconColor already set to #fff
+                        iconColor="#fff"
                         value={username}
                         setValue={setUsername}
                     />
@@ -80,6 +78,8 @@ const Login = () => {
                         placeholder="password"
                         type="password"
                         icon={passwordIcon}
+                        // ?FIXME: iconColor already set to #fff
+                        iconColor="#fff"
                         value={password}
                         setValue={setPassword}
                     />
@@ -90,11 +90,12 @@ const Login = () => {
                     {/* Login Button */}
                     <SubmitBtn text="Login" func={login} />
                     {/* bottom text */}
-                    <p className="text-center mt-2">
+                    <p className="text-center mt-2 text-textMain dark:text-textMainDark">
                         New here?{" "}
                         <Link
+                            className="text-active"
                             to="/signup"
-                            style={{ color: `${colorConstants.active}` }}
+                            // style={{ color: `${colorConstants.active}` }}
                         >
                             Signup here
                         </Link>

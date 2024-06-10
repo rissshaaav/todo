@@ -25,8 +25,9 @@ const Layout = () => {
     }, [navigate]);
 
     return (
-        <div className="bg-[#f3f4f6] min-w-screen min-h-screen flex">
-            <ToastContainer />
+        <div className="bg-[#f3f4f6] min-w-screen min-h-screen flex ">
+            {/* //!BUG: ToastContainer causes build fail error when tailwind config file is modified */}
+            {/* <ToastContainer /> */}
             <Menu />
             {/* Outlet is placeholder for nested routes */}
             <Outlet />
