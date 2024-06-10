@@ -44,25 +44,21 @@ const Signup = () => {
     }, [navigate]);
     return (
         <div
-            className={`min-w-screen min-h-screen flex justify-center items-center`}
-            style={{ backgroundColor: colorConstants.background }}
+            className="min-w-screen min-h-screen flex justify-center items-center bg-background dark:bg-backgroundDark"
         >
             {/* Signup Box */}
             <div
-                className="min-w-sm max-w-lg pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px]"
+                className="min-w-sm max-w-lg pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px] bg-foreground dark:bg-foregroundDark border-[2px] border-borderColor dark:border-borderColorDark shadow-custom"
                 style={{
-                    backgroundColor: colorConstants.main,
                     borderRadius: designConstants.borderRadius,
-                    boxShadow: designConstants.boxShadow,
-                    border: `2px solid ${designConstants.borderColor}`,
                 }}
             >
                 {/* Heading */}
                 <div>
-                    <h1 className="font-bold text-center text-[25px] sm:text-[50px] px-[25px] sm:px-[50px] mt-[10px]">
+                    <h1 className="font-bold text-center text-[25px] sm:text-[50px] px-[25px] sm:px-[50px] mt-[10px] text-textMain dark:text-textMainDark">
                         DoiT ToDo
                     </h1>
-                    <div className="divider m-0 p-0" />
+                    <div className="w-full border-[1px] border-borderColor dark:border-borderColorDark" />
                 </div>
 
                 {/* Username and Password Inputs Container */}
@@ -71,6 +67,8 @@ const Signup = () => {
                     <Input
                         placeholder="name"
                         icon={nameIcon}
+                        // ?FIXME: iconColor already set to #fff
+                        iconColor="#fff"
                         value={name}
                         setValue={setName}
                     />
@@ -79,6 +77,8 @@ const Signup = () => {
                     <Input
                         placeholder="email"
                         icon={emailIcon}
+                        // ?FIXME: iconColor already set to #fff
+                        iconColor="#fff"
                         value={email}
                         setValue={setEmail}
                     />
@@ -87,6 +87,8 @@ const Signup = () => {
                     <Input
                         placeholder="username"
                         icon={usernameIcon}
+                        // ?FIXME: iconColor already set to #fff
+                        iconColor="#fff"
                         value={username}
                         setValue={setUsername}
                     />
@@ -96,21 +98,23 @@ const Signup = () => {
                         placeholder="password"
                         type="password"
                         icon={passwordIcon}
+                        // ?FIXME: iconColor already set to #fff
+                        iconColor="#fff"
                         value={password}
                         setValue={setPassword}
                     />
                 </div>
 
                 {/* Login Button and Bottom Text Container*/}
-                <div className="px-[25px] sm:px-[50px]">
+                <div className="px-[25px] sm:px-[50px] w-full">
                     {/* Login Button */}
                     <SubmitBtn text="Signup" func={signup} />
                     {/* Bottom text */}
-                    <p className="text-center mt-2">
+                    <p className="text-center mt-2 text-textMain dark:text-textMainDark">
                         Not new?{" "}
                         <Link
+                            className="text-active"
                             to="/login"
-                            style={{ color: `${colorConstants.active}` }}
                         >
                             Login Here
                         </Link>

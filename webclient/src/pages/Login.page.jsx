@@ -95,7 +95,6 @@ const Login = () => {
                         <Link
                             className="text-active"
                             to="/signup"
-                            // style={{ color: `${colorConstants.active}` }}
                         >
                             Signup here
                         </Link>
