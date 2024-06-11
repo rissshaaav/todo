@@ -43,9 +43,9 @@ const TodoDetails = () => {
         return () => clearTimeout(timeoutId);
     }, [todoDetail, todoId]);
     return (
-        <div className="bg-white p-2.5 border-[2px] border-[#e5e5e5] rounded-[10px]">
+        <div className="h-full p-2.5 border-[2px] border-borderColor dark:border-borderColorDark rounded-[10px] bg-background dark:bg-foregroundDark ">
             <textarea
-                className="text-[30px] font-bold w-full h-min focus:outline-none"
+                className="text-[30px] font-bold w-full h-min focus:outline-none dark:bg-foregroundDark"
                 placeholder="Enter Todo Title"
                 value={todoDetail.title}
                 onChange={(e) =>
@@ -73,7 +73,7 @@ const TodoDetails = () => {
                 </span>
             </p>
             <textarea
-                className="w-full h-max focus:outline-none text-[18px] font-normal mt-2"
+                className="w-full h-max focus:outline-none text-[18px] font-normal mt-2 dark:bg-foregroundDark"
                 placeholder="Enter Todo Description"
                 value={todoDetail.description}
                 onChange={(e) =>

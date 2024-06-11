@@ -39,9 +39,9 @@ const AllTodos = () => {
         setFilteredTodos(filtered);
     }, [filterByStatus, filterByTitle, receivedTodos]);
     return (
-        <div className="bg-white min-w-[50%] w-[60%] h-full p-5 flex flex-col gap-10">
+        <div className="bg-foreground dark:bg-foregroundDark min-w-[50%] w-[60%] h-full p-5 flex flex-col gap-10">
             {/* Title -> TODO */}
-            <h1 className="text-[30px] font-bold">Todo</h1>
+            <h1 className="text-[30px] font-bold text-textMain dark:text-textMainDark">Todo</h1>
 
             {/* Header -> Today's Date and New Todo Button */}
             <header className="flex justify-between items-center gap-2.5">
