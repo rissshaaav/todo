@@ -12,7 +12,7 @@ const MenuItem = ({ leftIcon, text, rightIcon, header = false, to }) => {
             style={({ isActive }) =>
                 isActive
                     ? {
-                          backgroundColor: "white",
+                          backgroundColor: window.matchMedia('(prefers-color-scheme: dark)').matches ? "#282828" : "#fff",
                           color: "#6161ff",
                           fontWeight: "bold",
                       }

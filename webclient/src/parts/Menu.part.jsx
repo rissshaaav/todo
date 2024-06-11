@@ -34,32 +34,69 @@ const Menu = () => {
         fetchAndSetUserData();
     }, [setUserData]);
     return (
-        <div className="min-w-[250px] w-2/12 max-w-[300px] h-screen p-5 flex flex-col gap-[10px]">
+        <div className="min-w-[250px] w-2/12 max-w-[300px] h-screen p-5 flex flex-col gap-[10px] bg-background dark:bg-backgroundNavDark text-textMain dark:text-textMainDark">
             {/* Menu header displaying user avatar, username & menu button */}
             <MenuItem
                 leftIcon={profilePictureLink}
                 text={name}
-                rightIcon={menuIcon("30px")}
+                rightIcon={menuIcon(
+                    "30px",
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "#fff"
+                        : ""
+                )}
                 header={true}
                 to="/profile"
             />
 
             {/* menu section text */}
-            <p className="text-sm text-[#3f3f3f]">General</p>
+            <p className="text-sm text-textSecondary dark:text-textSecondaryDark">General</p>
 
             {/* Menu items */}
             {/* Todo */}
-            <MenuItem leftIcon={todoIcon("30px")} text="Todo" to="/todo" />
+            <MenuItem
+                leftIcon={todoIcon(
+                    "30px",
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "#fff"
+                        : ""
+                )}
+                text="Todo"
+                to="/todo"
+            />
             {/* Inbox */}
-            <MenuItem leftIcon={inboxIcon("30px")} text="Inbox" to="/inbox" />
+            <MenuItem
+                leftIcon={inboxIcon(
+                    "30px",
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "#fff"
+                        : ""
+                )}
+                text="Inbox"
+                to="/inbox"
+            />
             {/* Calendar */}
             <MenuItem
-                leftIcon={calendarIcon("30px")}
+                leftIcon={calendarIcon(
+                    "30px",
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "#fff"
+                        : ""
+                )}
                 text="Calendar"
                 to="/calendar"
             />
             {/* Trash */}
-            <MenuItem leftIcon={trashIcon("30px")} text="Trash" to="/trash" />
+            <MenuItem
+                leftIcon={trashIcon(
+                    "30px",
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "#fff"
+                        : ""
+                )}
+                text="Trash"
+                to="/trash"
+            />
         </div>
     );
 };
