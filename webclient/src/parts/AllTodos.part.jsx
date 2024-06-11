@@ -65,6 +65,7 @@ const AllTodos = () => {
                     className="flex-1 p-2 border-[1px] rounded-[10px] w-[30%] text-[20px] sm:h-full"
                     placeholder="Search by title"
                     icon={searchIcon}
+                    iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                     iconSize="25px"
                     value={filterByTitle}
                     setValue={setFilterByTitle}
@@ -74,8 +75,8 @@ const AllTodos = () => {
                 {/* Navigates to /todo/new */}
                 <Link to="new">
                     <button className="bg-[#6161ff] flex justify-between gap-2 p-2 rounded-[10px]">
-                        {addIcon("25px")}
-                        <span className="text-white">New Todo</span>
+                        {addIcon("25px", window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : "")}
+                        <span className="text-white text-textMain dark:text-textMainDark">New Todo</span>
                     </button>
                 </Link>
             </header>

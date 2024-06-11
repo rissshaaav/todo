@@ -8,7 +8,7 @@ import {
 } from "../assets/icons";
 import authChecker from "../utils/authChecker.utils";
 import { Link, useNavigate } from "react-router-dom";
-import { colorConstants, designConstants } from "../constants";
+import { designConstants } from "../constants";
 import Input from "../parts/Input";
 import SubmitBtn from "../parts/SubmitBtn";
 
@@ -67,8 +67,7 @@ const Signup = () => {
                     <Input
                         placeholder="name"
                         icon={nameIcon}
-                        // ?FIXME: iconColor already set to #fff
-                        iconColor="#fff"
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                         value={name}
                         setValue={setName}
                     />
@@ -77,8 +76,7 @@ const Signup = () => {
                     <Input
                         placeholder="email"
                         icon={emailIcon}
-                        // ?FIXME: iconColor already set to #fff
-                        iconColor="#fff"
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                         value={email}
                         setValue={setEmail}
                     />
@@ -87,8 +85,7 @@ const Signup = () => {
                     <Input
                         placeholder="username"
                         icon={usernameIcon}
-                        // ?FIXME: iconColor already set to #fff
-                        iconColor="#fff"
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                         value={username}
                         setValue={setUsername}
                     />
@@ -98,8 +95,7 @@ const Signup = () => {
                         placeholder="password"
                         type="password"
                         icon={passwordIcon}
-                        // ?FIXME: iconColor already set to #fff
-                        iconColor="#fff"
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                         value={password}
                         setValue={setPassword}
                     />

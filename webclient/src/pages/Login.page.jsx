@@ -4,7 +4,7 @@ import authChecker from "../utils/authChecker.utils";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { usernameIcon, passwordIcon } from "../assets/icons";
-import { colorConstants, designConstants } from "../constants";
+import { designConstants } from "../constants";
 import SubmitBtn from "../parts/SubmitBtn";
 import Input from "../parts/Input";
 import loginService from "../services/userRelated/Login.service";
@@ -67,8 +67,7 @@ const Login = () => {
                     <Input
                         placeholder="username"
                         icon={usernameIcon}
-                        // ?FIXME: iconColor already set to #fff
-                        iconColor="#fff"
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                         value={username}
                         setValue={setUsername}
                     />
@@ -78,8 +77,7 @@ const Login = () => {
                         placeholder="password"
                         type="password"
                         icon={passwordIcon}
-                        // ?FIXME: iconColor already set to #fff
-                        iconColor="#fff"
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
                         value={password}
                         setValue={setPassword}
                     />
