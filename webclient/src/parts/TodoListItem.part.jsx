@@ -15,13 +15,13 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
         }
     };
     return (
-        <li className="list-none flex items-start justify-center gap-x-[10px] border-[2px] border-[#e5e5e5] pl-2.5 rounded-[10px]">
+        <li className="list-none flex items-start justify-center gap-x-[10px] border-[2px] border-borderColor dark:border-borderColorDark pl-2.5 rounded-[10px] bg-foreground dark:bg-foregroundDark text-textMain dark:text-textMainDark">
             <input type="checkbox" className="h-[15px] w-[15px] mt-4" />
             <Link to={id} className="flex-1 flex flex-col py-2.5">
                 <div className="text-[20px]">{title}</div>
                 <div className="">
                     <div className="flex items-center gap-2.5">
-                        {calendarIcon("15px")}
+                        {calendarIcon("15px", "#fff")}
                         <span>{new Date(dueDate).toLocaleString()}</span>
                     </div>
                     <span className="block w-min text-[#f00] bg-[#e5e5e5] p-1 mt-1 rounded-lg">
@@ -32,9 +32,9 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
 
             <button
                 onClick={deleteTodoHandler}
-                className="align-center flex justify-center items-center p-1 w-[50px] h-full hover:bg-red-500 rounded-r-[10px]"
+                className="align-center flex justify-center items-center p-1 w-[50px] h-full hover:bg-warn rounded-r-[10px]"
             >
-                {trashIcon("30px")}
+                {trashIcon("30px", "#fff")}
             </button>
         </li>
     );

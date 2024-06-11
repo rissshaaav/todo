@@ -13,6 +13,7 @@ module.exports = {
       "borderColor": "#e5e5e5",
       "borderColorDark": "#3d3e3f",
       "active": "#6161ff",
+      "warn": "#ef4444",
     },
     boxShadow: {
       "custom": "0 0 30px 2px rgba(255, 255, 255, 0.25)"
