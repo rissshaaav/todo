@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'selector',
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     colors: {
@@ -18,7 +19,8 @@ module.exports = {
       "warn": "#ef4444",
     },
     boxShadow: {
-      "custom": "0 0 30px 2px rgba(255, 255, 255, 0.25)"
+      "dark": "0 0 30px 2px rgba(255, 255, 255, 0.25)",
+      "light": "0 0 30px 2px rgba(0, 0, 0, 0.25)",
     },
     extend: {},
   },

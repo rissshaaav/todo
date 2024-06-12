@@ -46,7 +46,7 @@ const Login = () => {
             <ToastContainer />
             {/* Login Box */}
             <div
-                className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px] bg-foreground dark:bg-foregroundDark border-[2px] border-borderColor dark:border-borderColorDark shadow-custom"
+                className="min-w-sm max-w-md pb-[25px] sm:pb-[50px] flex flex-col gap-[25px] sm:gap-[50px] bg-foreground dark:bg-foregroundDark border-[2px] border-borderColor dark:border-borderColorDark shadow-light dark:shadow-dark"
                 style={{
                     borderRadius: designConstants.borderRadius,
                 }}
@@ -67,7 +67,7 @@ const Login = () => {
                     <Input
                         placeholder="username"
                         icon={usernameIcon}
-                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : "#000"}
                         value={username}
                         setValue={setUsername}
                     />
@@ -77,7 +77,7 @@ const Login = () => {
                         placeholder="password"
                         type="password"
                         icon={passwordIcon}
-                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
+                        iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : "#000"}
                         value={password}
                         setValue={setPassword}
                     />
