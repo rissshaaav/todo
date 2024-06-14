@@ -1,4 +1,4 @@
-export const nameIcon = (w = "50px", iconColor="#1C274C") => {
+export const nameIcon = (w = "50px", iconColor = "#1C274C") => {
     const nameIcon = (
         <svg
             width={w}
@@ -37,7 +37,7 @@ export const nameIcon = (w = "50px", iconColor="#1C274C") => {
     return nameIcon;
 };
 
-export const emailIcon = (w = "50px", iconColor="#1C274C") => {
+export const emailIcon = (w = "50px", iconColor = "#1C274C") => {
     const emailIcon = (
         <svg
             width={w}
@@ -70,7 +70,7 @@ export const emailIcon = (w = "50px", iconColor="#1C274C") => {
     return emailIcon;
 };
 
-export const usernameIcon = (w = "50px", iconColor="#1C274C") => {
+export const usernameIcon = (w = "50px", iconColor = "#1C274C") => {
     const usernameIcon = (
         <svg
             width={w}
@@ -93,7 +93,7 @@ export const usernameIcon = (w = "50px", iconColor="#1C274C") => {
     return usernameIcon;
 };
 
-export const passwordIcon = (w = "50px", iconColor="#1C274C") => {
+export const passwordIcon = (w = "50px", iconColor = "#1C274C") => {
     const passwordIcon = (
         <svg
             width={w}
@@ -124,7 +124,7 @@ export const passwordIcon = (w = "50px", iconColor="#1C274C") => {
     return passwordIcon;
 };
 
-export const menuIcon = (w = "50px", iconColor="#1C274C") => {
+export const menuIcon = (w = "50px", iconColor = "#1C274C") => {
     const menuIcon = (
         <svg
             width={w} //to make it a square always
@@ -166,7 +166,7 @@ export const menuIcon = (w = "50px", iconColor="#1C274C") => {
     return menuIcon;
 };
 
-export const todoIcon = (w = "50px", iconColor="#1C274C") => {
+export const todoIcon = (w = "50px", iconColor = "#1C274C") => {
     const todoIcon = (
         <svg
             width={w} //to make it a square always
@@ -186,7 +186,7 @@ export const todoIcon = (w = "50px", iconColor="#1C274C") => {
     return todoIcon;
 };
 
-export const inboxIcon = (w = "50px", iconColor="#1C274C") => {
+export const inboxIcon = (w = "50px", iconColor = "#1C274C") => {
     const inboxIcon = (
         <svg
             width={w} // to make it a square always
@@ -220,7 +220,7 @@ export const inboxIcon = (w = "50px", iconColor="#1C274C") => {
     return inboxIcon;
 };
 
-export const calendarIcon = (w = "50px", iconColor="#1C274C") => {
+export const calendarIcon = (w = "50px", iconColor = "#1C274C") => {
     const calendarIcon = (
         <svg
             width={w} // to make it a square always
@@ -264,7 +264,7 @@ export const calendarIcon = (w = "50px", iconColor="#1C274C") => {
     return calendarIcon;
 };
 
-export const trashIcon = (w = "50px", iconColor="#3F3F3F") => {
+export const trashIcon = (w = "50px", iconColor = "#3F3F3F") => {
     const trashIcon = (
         <svg
             width={w} // to make it a square always
@@ -307,7 +307,7 @@ export const trashIcon = (w = "50px", iconColor="#3F3F3F") => {
     return trashIcon;
 };
 
-export const addIcon = (w = "50px", iconColor="white") => {
+export const addIcon = (w = "50px", iconColor = "white") => {
     const addIcon = (
         <svg
             width={w} // to make it a square always
@@ -329,7 +329,7 @@ export const addIcon = (w = "50px", iconColor="white") => {
     return addIcon;
 };
 
-export const searchIcon = (w = "50px", iconColor="#1C274C") => {
+export const searchIcon = (w = "50px", iconColor = "#1C274C") => {
     const searchIcon = (
         <svg
             width={w} // to make it a square always
@@ -358,4 +358,77 @@ export const searchIcon = (w = "50px", iconColor="#1C274C") => {
         </svg>
     );
     return searchIcon;
+};
+
+export const pendingIcon = (w = "50px", iconColor = "#1C274C") => {
+    const pendingIcon = (
+        <svg
+            width={w} // to make it a square always
+            height={w} // to make it a squa{iconColor}
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M12 21C10.22 21 8.47991 20.4722 6.99987 19.4832C5.51983 18.4943 4.36628 17.0887 3.68509 15.4442C3.0039 13.7996 2.82567 11.99 3.17294 10.2442C3.5202 8.49836 4.37737 6.89472 5.63604 5.63604C6.89472 4.37737 8.49836 3.5202 10.2442 3.17294C11.99 2.82567 13.7996 3.0039 15.4442 3.68509C17.0887 4.36628 18.4943 5.51983 19.4832 6.99987C20.4722 8.47991 21 10.22 21 12C21 14.387 20.0518 16.6761 18.364 18.364C16.6761 20.0518 14.387 21 12 21ZM12 4.5C10.5166 4.5 9.0666 4.93987 7.83323 5.76398C6.59986 6.58809 5.63856 7.75943 5.07091 9.12988C4.50325 10.5003 4.35473 12.0083 4.64411 13.4632C4.9335 14.918 5.64781 16.2544 6.6967 17.3033C7.7456 18.3522 9.08197 19.0665 10.5368 19.3559C11.9917 19.6453 13.4997 19.4968 14.8701 18.9291C16.2406 18.3614 17.4119 17.4001 18.236 16.1668C19.0601 14.9334 19.5 13.4834 19.5 12C19.5 10.0109 18.7098 8.10323 17.3033 6.6967C15.8968 5.29018 13.9891 4.5 12 4.5Z"
+                fill={iconColor}
+            />
+            <path
+                d="M12 13C11.8019 12.9974 11.6126 12.9176 11.4725 12.7775C11.3324 12.6374 11.2526 12.4481 11.25 12.25V8.75C11.25 8.55109 11.329 8.36032 11.4697 8.21967C11.6103 8.07902 11.8011 8 12 8C12.1989 8 12.3897 8.07902 12.5303 8.21967C12.671 8.36032 12.75 8.55109 12.75 8.75V12.25C12.7474 12.4481 12.6676 12.6374 12.5275 12.7775C12.3874 12.9176 12.1981 12.9974 12 13Z"
+                fill={iconColor}
+            />
+            <path
+                d="M12 16C11.8019 15.9974 11.6126 15.9176 11.4725 15.7775C11.3324 15.6374 11.2526 15.4481 11.25 15.25V14.75C11.25 14.5511 11.329 14.3603 11.4697 14.2197C11.6103 14.079 11.8011 14 12 14C12.1989 14 12.3897 14.079 12.5303 14.2197C12.671 14.3603 12.75 14.5511 12.75 14.75V15.25C12.7474 15.4481 12.6676 15.6374 12.5275 15.7775C12.3874 15.9176 12.1981 15.9974 12 16Z"
+                fill={iconColor}
+            />
+        </svg>
+    );
+    return pendingIcon;
+};
+
+export const inProgressIcon = (w = "50px", iconColor = "#1C274C") => {
+    const inProgressIcon = (
+        <svg
+            width={w} // to make it a square always
+            height={w} // to make it a square always
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M12 7V12L13.5 14.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                stroke={iconColor}
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+    return inProgressIcon;
+};
+
+export const completedIcon = (w = "50px", iconColor = "#1C274C") => {
+    const completedIcon = (
+        <svg
+            width={w} // to make it a square always
+            height={w} // to make it a square always
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M9 10L12.2581 12.4436C12.6766 12.7574 13.2662 12.6957 13.6107 12.3021L20 5"
+                stroke={iconColor}
+                strokeWidth="2"
+                strokeLinecap="round"
+            />
+            <path
+                d="M21 12C21 13.8805 20.411 15.7137 19.3156 17.2423C18.2203 18.7709 16.6736 19.9179 14.893 20.5224C13.1123 21.1268 11.187 21.1583 9.38744 20.6125C7.58792 20.0666 6.00459 18.9707 4.85982 17.4789C3.71505 15.987 3.06635 14.174 3.00482 12.2945C2.94329 10.415 3.47203 8.56344 4.51677 6.99987C5.56152 5.4363 7.06979 4.23925 8.82975 3.57685C10.5897 2.91444 12.513 2.81996 14.3294 3.30667"
+                stroke={iconColor}
+                strokeWidth="2"
+                strokeLinecap="round"
+            />
+        </svg>
+    );
+    return completedIcon;
 };

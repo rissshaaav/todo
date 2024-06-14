@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { calendarIcon, trashIcon } from "../assets/icons";
 import deleteTodo from "../services/todoRelated/deleteTodo.service";
 import { toast } from "react-toastify";
+import StatusBadges from "../components/StatusBadges";
 
 const TodoListItem = ({ title, dueDate, id, status }) => {
     const deleteTodoHandler = async () => {
@@ -24,9 +25,7 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
                         {calendarIcon("15px", "#fff")}
                         <span>{new Date(dueDate).toLocaleString()}</span>
                     </div>
-                    <span className="block w-min text-[#f00] bg-[#e5e5e5] p-1 mt-1 rounded-lg">
-                        {status}
-                    </span>
+                    <StatusBadges status={status} />
                 </div>
             </Link>
 

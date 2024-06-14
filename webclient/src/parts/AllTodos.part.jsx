@@ -41,7 +41,9 @@ const AllTodos = () => {
     return (
         <div className="bg-foreground dark:bg-foregroundDark min-w-[50%] w-[60%] h-full p-5 flex flex-col gap-10">
             {/* Title -> TODO */}
-            <h1 className="text-[30px] font-bold text-textMain dark:text-textMainDark">Todo</h1>
+            <h1 className="text-[30px] font-bold text-textMain dark:text-textMainDark">
+                Todo
+            </h1>
 
             {/* Header -> Today's Date and New Todo Button */}
             <header className="flex justify-between items-center gap-2.5">
@@ -65,7 +67,12 @@ const AllTodos = () => {
                     className="flex-1 p-2 border-[1px] rounded-[10px] w-[30%] text-[20px] sm:h-full"
                     placeholder="Search by title"
                     icon={searchIcon}
-                    iconColor={window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : ""}
+                    iconColor={
+                        window.matchMedia("(prefers-color-scheme: dark)")
+                            .matches
+                            ? "#fff"
+                            : ""
+                    }
                     iconSize="25px"
                     value={filterByTitle}
                     setValue={setFilterByTitle}
@@ -75,8 +82,16 @@ const AllTodos = () => {
                 {/* Navigates to /todo/new */}
                 <Link to="new">
                     <button className="bg-[#6161ff] flex justify-between gap-2 p-2 rounded-[10px]">
-                        {addIcon("25px", window.matchMedia('(prefers-color-scheme: dark)').matches ? "#fff" : "")}
-                        <span className="text-white text-textMain dark:text-textMainDark">New Todo</span>
+                        {addIcon(
+                            "25px",
+                            window.matchMedia("(prefers-color-scheme: dark)")
+                                .matches
+                                ? "#fff"
+                                : ""
+                        )}
+                        <span className="text-white text-textMain dark:text-textMainDark">
+                            New Todo
+                        </span>
                     </button>
                 </Link>
             </header>
