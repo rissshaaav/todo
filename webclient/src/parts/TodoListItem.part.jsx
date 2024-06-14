@@ -9,7 +9,6 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
     const deleteTodoHandler = async () => {
         try {
             const response = await deleteTodo(id);
-            console.log(response.message);
             toast.error(`${response.message}`);
         } catch (error) {
             console.log("TodoListItem -> ", error.message);

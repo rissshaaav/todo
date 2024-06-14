@@ -49,15 +49,15 @@ const AllTodos = () => {
             <header className="flex justify-between items-center gap-2.5">
                 {/* Today's Date */}
                 <div className="text-[20px] font-semibold">
-                    <span>Status:</span>
+                    
                     <select
                         defaultValue="all"
-                        className=""
+                        className="w-max p-2 border-[2px] rounded-[10px] border-borderColor dark:border-borderColorDark text-[20px] bg-background dark:bg-foregroundDark active:border-active focus:border-active focus:outline-none"
                         onChange={(e) => setFilterByStatus(e.target.value)}
                     >
                         <option value="all">All</option>
-                        <option value="active">Active</option>
                         <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
                         <option value="completed">Completed</option>
                     </select>
                 </div>
@@ -81,7 +81,7 @@ const AllTodos = () => {
                 {/* New Todo Button */}
                 {/* Navigates to /todo/new */}
                 <Link to="new">
-                    <button className="bg-[#6161ff] flex justify-between gap-2 p-2 rounded-[10px]">
+                    <button className="bg-active flex justify-between gap-2 p-2 rounded-[10px]">
                         {addIcon(
                             "25px",
                             window.matchMedia("(prefers-color-scheme: dark)")

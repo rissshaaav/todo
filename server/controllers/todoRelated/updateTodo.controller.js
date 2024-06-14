@@ -37,7 +37,6 @@ const updateTodo = async (req, res) => {
         }
 
         const localeDate = new Date(retrievedTodo.dueDate);
-        console.log("date -> ",localeDate.toLocaleString());
 
         retrievedTodo.dueDate = localeDate;
         // console.log("dueDate -> ",retrievedTodo.dueDate);
