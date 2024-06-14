@@ -81,7 +81,7 @@ const AllTodos = () => {
                 {/* New Todo Button */}
                 {/* Navigates to /todo/new */}
                 <Link to="new">
-                    <button className="bg-active flex justify-between gap-2 p-2 rounded-[10px]">
+                    <button className="bg-active flex justify-between gap-2 p-2 py-[10px] rounded-[10px]">
                         {addIcon(
                             "25px",
                             window.matchMedia("(prefers-color-scheme: dark)")
