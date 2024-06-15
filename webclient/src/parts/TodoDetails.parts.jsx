@@ -10,6 +10,7 @@ const TodoDetails = () => {
         title: "",
         description: "",
         dueDate: "",
+        status: undefined,
     });
 
     // Get the todoId from the URL
@@ -25,6 +26,7 @@ const TodoDetails = () => {
                     title: "",
                     description: "",
                     dueDate: "",
+                    status: undefined,
                 });
                 return;
             }
@@ -98,6 +100,12 @@ const TodoDetails = () => {
                             }
                         />
                     )}
+                </span>
+            </p>
+            <p className="text-[18px] font-semibold">
+                <span className="text-[#9ca3af]">Status: </span>
+                <span>
+                    {todoDetail.status ? todoDetail.status : "Not Started"}
                 </span>
             </p>
             {/* Todo Description */}
