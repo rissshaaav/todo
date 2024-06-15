@@ -36,9 +36,8 @@ const updateTodo = async (req, res) => {
             return res.status(404).json({ message: "Todo not found" });
         }
 
-        const localeDate = new Date(retrievedTodo.dueDate);
-
-        retrievedTodo.dueDate = localeDate;
+        // const localeDate = new Date(retrievedTodo.dueDate);
+        // retrievedTodo.dueDate = localeDate;
         // console.log("dueDate -> ",retrievedTodo.dueDate);
 
         // Return the updated todo

@@ -58,22 +58,33 @@ const TodoDetails = () => {
     }, [todoDetail, todoId]);
     return (
         // Todo Details Container
-        <div className="h-full p-2.5 border-[2px] border-borderColor dark:border-borderColorDark rounded-[10px] bg-background dark:bg-foregroundDark ">
+        <div className="flex flex-col h-full p-2.5 border-[2px] border-borderColor dark:border-borderColorDark rounded-[10px] bg-background dark:bg-foregroundDark ">
             {/* Todo Title */}
             <textarea
-                className="text-[30px] font-bold w-full h-min focus:outline-none dark:bg-foregroundDark"
+                className="text-[30px] font-bold w-full focus:outline-none dark:bg-foregroundDark"
                 placeholder="Enter Todo Title"
                 value={todoDetail.title}
                 onChange={(e) =>
                     setTodoDetail({ ...todoDetail, title: e.target.value })
                 }
+                onInput={(e) => {
+                    const maxHeight = 200; // Maximum height in pixels
+                    e.target.style.height = "auto"; // Reset the height
+                    const desiredHeight = e.target.scrollHeight;
+                    e.target.style.height = `${Math.min(
+                        desiredHeight,
+                        maxHeight
+                    )}px`; // Set to the lesser of content height or maxHeight
+                }}
             ></textarea>
             {/* Due Date */}
             <p className="text-[18px] font-semibold">
                 <span className="text-[#9ca3af]">Due Date: </span>
                 <span>
                     {todoDetail.dueDate ? (
-                        new Date(todoDetail.dueDate).toLocaleString()
+                        new Date(todoDetail.dueDate)
+                            .toLocaleString()
+                            .split(",")[0]
                     ) : (
                         <input
                             className="text-[#9ca3af]"
@@ -91,7 +102,7 @@ const TodoDetails = () => {
             </p>
             {/* Todo Description */}
             <textarea
-                className="w-full h-max focus:outline-none text-[18px] font-normal mt-2 dark:bg-foregroundDark"
+                className="w-full flex-1 focus:outline-none text-[18px] font-normal mt-2 dark:bg-foregroundDark"
                 placeholder="Enter Todo Description"
                 value={todoDetail.description}
                 onChange={(e) =>

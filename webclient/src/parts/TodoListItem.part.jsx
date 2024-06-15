@@ -22,7 +22,9 @@ const TodoListItem = ({ title, dueDate, id, status }) => {
                 <div className="">
                     <div className="flex items-center gap-2.5">
                         {calendarIcon("15px", "#fff")}
-                        <span>{new Date(dueDate).toLocaleString()}</span>
+                        <span>
+                            {new Date(dueDate).toLocaleString().split(",")[0]}
+                        </span>
                     </div>
                     <StatusBadges status={status} />
                 </div>
